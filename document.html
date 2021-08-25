@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康档案 | 康到·雪梅大健康 | 健康之道，你我同行</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light p-2 mb-3 border-bottom">
+        <a class="navbar-brand" href="#">
+            <img src="images/kangdoor.png" class="logo" alt="康到">
+            <strong class="h3">雪梅大健康</strong>
+        </a>
+        <span class="navbar-brand mb-0 h1"></span>
+    </nav>
+
+    <div class="container">
+        <form>
+            <!-- 健康档案表 -->
+            <div class="card">
+                <h6 class="card-header text-center">健康档案表</h6>
+                <div class="card-body">
+                    <!-- 一、基本信息 -->
+                    <h5 class="card-title">一、基本信息</h5>
+                    <div class="mb-3">
+                        <label class="form-label">姓名：</label>
+                        <input name="name" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">性别：</label>
+                        <select name="gender" class="form-control">
+                            <option value=""></option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">年龄：</label>
+                        <div class="input-group mb-3">
+                            <input name="age" type="text" class="form-control">
+                            <span class="input-group-text">周岁</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">职业：</label>
+                        <input name="job" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">手机：</label>
+                        <input name="phone" type="text" class="form-control">
+                    </div>
+                    <!-- 二、体格信息 -->
+                    <h5 class="my-4">二、体格信息</h5>
+                    <div class="mb-3">
+                        <label class="form-label">身高：</label>
+                        <div class="input-group mb-3">
+                            <input name="height" type="text" class="form-control">
+                            <span class="input-group-text">cm</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">体重：</label>
+                        <div class="input-group mb-3">
+                            <input name="weight" type="text" class="form-control">
+                            <span class="input-group-text">kg</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">BMI：</label>
+                        <input name="bmi" type="text" class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">腰围：</label>
+                        <div class="input-group mb-3">
+                            <input name="waist" type="text" class="form-control">
+                            <span class="input-group-text">cm</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">臀围：</label>
+                        <div class="input-group mb-3">
+                            <input name="butt" type="text" class="form-control">
+                            <span class="input-group-text">cm</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">腰臀比：</label>
+                        <input name="waistButtRatio" type="text" class="form-control" readonly>
+                    </div>
+                    <!-- 三、体检信息 -->
+                    <h5 class="mt-4">三、体检信息</h5>
+                    <div class="mb-3">
+                        <label class="form-label">近期体检的异常指标及数值：</label>
+                        <textarea name="healthCheck" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+                    <!-- 四、疾病/亚健康信息 -->
+                    <h5 class="mt-4">四、疾病/亚健康信息</h5>
+                    <div class="mb-3">
+                        <label class="form-label">时间、疾病或不适症状：</label>
+                        <textarea name="diseaseSubHealth" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+                    <!-- 五、家族遗传病史 -->
+                    <h5 class="mt-4">五、家族遗传病史</h5>
+                    <div class="mb-3 mt-3">
+                        <textarea name="familyDiseaseHis" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+                    <!-- 六、调理目标 -->
+                    <h5 class="mt-4">六、调理目标</h5>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="goals[]" class="form-check-input" type="checkbox" value="减肥">
+                            <label class="form-check-label">减肥</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="goals[]" class="form-check-input" type="checkbox" value="增重">
+                            <label class="form-check-label">增重</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="goals[]" class="form-check-input" type="checkbox" value="调理亚健康">
+                            <label class="form-check-label">调理亚健康</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="goals[]" class="form-check-input" type="checkbox" value="防控慢性病">
+                            <label class="form-check-label">防控慢性病</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">在多长时间内，达到健康调理效果：</label>
+                        <div class="input-group mb-3">
+                            <input name="duringMonths" type="text" class="form-control">
+                            <span class="input-group-text">个月</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 膳食信息 -->
+            <div class="card mt-4">
+                <h6 class="card-header text-center">膳食信息</h6>
+                <div class="card-body">
+                    <!-- 一、膳食习惯 -->
+                    <h5 class="card-title">一、膳食习惯</h5>
+                    <div class="mb-3">
+                        <label class="form-label">早餐内容：</label>
+                        <textarea name="breakfast" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">午餐内容：</label>
+                        <textarea name="launch" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">晚餐内容：</label>
+                        <textarea name="dinner" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">加餐内容：</label>
+                        <textarea name="extraMeal" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">其他饮食：</label>
+                        <textarea name="otherMeal" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">饮水量：</label>
+                        <select name="gender" class="form-control">
+                            <option value=""></option>
+                            <option value="1000ml（三四杯）">1000ml（三四杯）</option>
+                            <option value="1500~2000ml（五六杯）">1500~2000ml（五六杯）</option>
+                            <option value="2000ml以上（七八杯）">2000ml以上（七八杯）</option>
+                        </select>
+                    </div>
+                    <!-- 二、膳食结构 -->
+                    <h5 class="card-title">二、膳食结构</h5>
+                    <div class="mb-3">
+                        <label class="form-label">主食内容：</label>
+                        <textarea name="mainFood" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">副食内容（肉类）：</label>
+                        <textarea name="sideFoodMeat" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">副食内容（蛋类）：</label>
+                        <textarea name="sideFoodEgg" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">副食内容（奶类）：</label>
+                        <textarea name="sideFoodMilk" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">副食内容（蔬菜）：</label>
+                        <textarea name="sideFoodVegetable" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">副食内容（水果）：</label>
+                        <textarea name="sideFoodFruit" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">副食内容（豆制品）：</label>
+                        <textarea name="sideFoodBeans" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">口味轻重：</label>
+                        <input name="tasteLevel" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">保健食品：</label>
+                        <textarea name="foodSupplement" class="form-control" cols="30" rows="5"></textarea>
+                    </div>
+                    <!-- 三、营养评价 -->
+                    <h5 class="card-title">三、营养评价</h5>
+                    <div class="mb-3">
+                        <label class="form-label">饮水量：</label>
+                        <select name="foodHabit" class="form-control">
+                            <option value=""></option>
+                            <option value="良好">良好</option>
+                            <option value="不佳">不佳</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">膳食结构：</label>
+                        <select name="foodHabit" class="form-control">
+                            <option value=""></option>
+                            <option value="均衡">均衡</option>
+                            <option value="失衡">失衡</option>
+                        </select>
+                        <table class="table table-bordered mt-2">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>营养素</th>
+                                    <th>缺乏</th>
+                                    <th>过量</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td>能量</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>脂肪</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>蛋白质</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>VA</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>VD</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>B族</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>VC</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>钾</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>钙</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>镁</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>铁</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>锌</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>硒</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>膳食纤维</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="lack">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" name="over">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- 生活方式 -->
+            <div class="card mt-4">
+                <h6 class="card-header text-center">生活方式</h6>
+                <div class="card-body">
+                    <!-- 一、睡眠 -->
+                    <h5 class="card-title">一、睡眠</h5>
+                    <div class="mb-3">
+                        <label class="form-label">入睡：</label>
+                        <select name="sleepTime" class="form-control">
+                            <option value=""></option>
+                            <option value="23点以前">23点以前</option>
+                            <option value="23点以后">23点以后</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">起床：</label>
+                        <select name="sleepTime" class="form-control">
+                            <option value=""></option>
+                            <option value="7点以前">7点以前</option>
+                            <option value="7点以后">7点以后</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">午睡：</label>
+                        <select name="sleepTime" class="form-control">
+                            <option value=""></option>
+                            <option value="无">无</option>
+                            <option value="半小时左右">半小时左右</option>
+                            <option value="一小时以上">一小时以上</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">睡眠感受：</label>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input name="sleepFeel[]" class="form-check-input" type="checkbox" value="正常">
+                                <label class="form-check-label">正常</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input name="sleepFeel[]" class="form-check-input" type="checkbox" value="入睡困难">
+                                <label class="form-check-label">入睡困难</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input name="sleepFeel[]" class="form-check-input" type="checkbox" value="多梦">
+                                <label class="form-check-label">多梦</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input name="sleepFeel[]" class="form-check-input" type="checkbox" value="早醒">
+                                <label class="form-check-label">早醒</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input name="sleepFeel[]" class="form-check-input" type="checkbox" value="失眠">
+                                <label class="form-check-label">失眠</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input name="sleepFeel[]" class="form-check-input" type="checkbox" value="其他">
+                                <label class="form-check-label">其他</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input name="sleepFeelOther" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!-- 二、排便 -->
+                    <h5 class="card-title">二、排便</h5>
+                    <div class="mb-3 mt-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="规律">
+                            <label class="form-check-label">规律</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="不规律">
+                            <label class="form-check-label">不规律</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="成形">
+                            <label class="form-check-label">成形</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="不成形">
+                            <label class="form-check-label">不成形</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="轻松">
+                            <label class="form-check-label">轻松</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="困难">
+                            <label class="form-check-label">困难</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="不太难闻">
+                            <label class="form-check-label">不太难闻</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input name="defecate[]" class="form-check-input" type="checkbox" value="比较难闻">
+                            <label class="form-check-label">比较难闻</label>
+                        </div>
+                    </div>
+                    <!-- 三、运动 -->
+                    <h5 class="card-title">三、运动</h5>
+                    <div class="mb-3">
+                        <label class="form-label">平时微信运动数量：</label>
+                        <select name="exercise" class="form-control">
+                            <option value=""></option>
+                            <option value="静态生活方式（小于5000步）">静态生活方式（小于5000步）</option>
+                            <option value="正常状态（5000~8000步）">正常状态（5000~8000步）</option>
+                            <option value="动态生活方式（大于10000步）">动态生活方式（大于10000步）</option>
+                        </select>
+                    </div>
+                    <!-- 四、不良习惯 -->
+                    <h5 class="card-title">四、不良习惯</h5>
+                    <div class="mb-3 mt-3">
+                        <textarea name="healthCheck" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid my-5">
+                <button type="button" class="btn btn-primary btn-block btn-lg">
+                    <i class="far fa-save text-white"></i>
+                    <strong class="text-white">保存</strong>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript Bundle (+Popper) -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/common.js"></script>
+</body>
+
+</html>
